@@ -1,0 +1,221 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2019 The MathWorks, Inc.
+                  R2019a (9.6.0.1072779) 64-bit (glnxa64)
+                               March 8, 2019
+
+ 
+To get started, type doc.
+For product information, visit www.mathworks.com.
+ 
+
+---------------------------------------------------------------------------
+CVX: Software for Disciplined Convex Programming       (c)2014 CVX Research
+Version 2.2, Build 1148 (62bfcca)                  Tue Jan 28 00:51:35 2020
+---------------------------------------------------------------------------
+Installation info:
+    Path: /home/ritesh/cvx
+    MATLAB version: 9.6 (R2019a)
+    OS: Linux amd64 version 5.4.0-72-generic
+    Java version: 1.8.0_181
+Verfying CVX directory contents:
+    WARNING: The following files/directories are missing:
+        /home/ritesh/cvx/sedumi/.travis.yml
+    These omissions may prevent CVX from operating properly.
+Preferences: 
+    Path: /home/ritesh/.matlab/cvx_prefs.mat
+License host:
+    Username: ritesh
+    Host ID: 049226da842a (enp5s0,10.130.169.64)
+Installed license:
+    No license installed.
+No valid licenses found.
+    <a href="http://cvxr.com/cvx/academic?c_act=fill&c_unm=ritesh&c_hid=049226da842a
+">Click here</a> to fill out an academic license request
+    for the username and first hostid listed above.
+---------------------------------------------------------------------------
+Setting CVX paths...done.
+Saving updated path...failed. (see below)
+Searching for solvers...5 shims found.
+2 solvers initialized (* = default):
+ *  SDPT3    4.0        {cvx}/sdpt3
+    SeDuMi   1.3.4      {cvx}/sedumi
+3 solvers skipped:
+    GLPK                
+        Could not find a GLPK installation.
+    Gurobi   unknown    {cvx}/gurobi/a64
+        No valid Gurobi license was found.
+    Mosek    9.1.9      {cvx}/mosek/a64
+        Using MOSEK with CVX requires an academic MOSEK license
+        or a MOSEK-enabled CVX Professional license.
+Saving updated preferences...done.
+Testing with a simple model...done!
+---------------------------------------------------------------------------
+To change the default solver, type "cvx_solver <solver_name>".
+To save this change for future sessions, type "cvx_save_prefs".
+Please consult the users' guide for more information.
+---------------------------------------------------------------------------
+NOTE: the MATLAB path has been changed to point to the CVX distribution. To
+use CVX without having to re-run CVX_SETUP every time MATLAB starts, you
+will need to save this path permanently. This script attempted to do this
+for you, but failed---likely due to UNIX permissions restrictions.
+To solve the problem, create a new file
+    /home/ritesh/Documents/MATLAB/startup.m
+containing the following line:
+    run /home/ritesh/cvx/cvx_startup.m
+Then execute the following MATLAB commands:
+    userpath reset; startup
+Please consult the MATLAB documentation for more information about the
+startup.m file and its proper placement and usage.
+---------------------------------------------------------------------------
+
+Elapsed time is 436.501122 seconds.
+Elapsed time is 365.623857 seconds.
+Elapsed time is 6.205011 seconds.
+Elapsed time is 478.756394 seconds.
+Elapsed time is 616.754183 seconds.
+Elapsed time is 7.907204 seconds.
+Elapsed time is 672.094780 seconds.
+Elapsed time is 620.488890 seconds.
+Elapsed time is 6.934571 seconds.
+Elapsed time is 624.999055 seconds.
+Elapsed time is 596.681294 seconds.
+Elapsed time is 8.020146 seconds.
+Elapsed time is 448.782959 seconds.
+Elapsed time is 570.718038 seconds.
+Elapsed time is 7.591931 seconds.
+Elapsed time is 516.385371 seconds.
+Elapsed time is 482.545211 seconds.
+Elapsed time is 10.690759 seconds.
+Elapsed time is 520.521343 seconds.
+Elapsed time is 500.826936 seconds.
+Elapsed time is 9.876956 seconds.
+Elapsed time is 559.371829 seconds.
+Elapsed time is 524.589238 seconds.
+Elapsed time is 10.766866 seconds.
+Elapsed time is 592.169975 seconds.
+Elapsed time is 567.136122 seconds.
+Elapsed time is 15.521811 seconds.
+Elapsed time is 548.553876 seconds.
+Elapsed time is 538.123048 seconds.
+Elapsed time is 14.703962 seconds.
+Elapsed time is 568.206604 seconds.
+Elapsed time is 537.023520 seconds.
+Elapsed time is 12.689260 seconds.
+Elapsed time is 590.264755 seconds.
+Elapsed time is 538.329767 seconds.
+Elapsed time is 14.197235 seconds.
+Elapsed time is 703.365374 seconds.
+Elapsed time is 646.724716 seconds.
+Elapsed time is 14.531505 seconds.
+Elapsed time is 725.326939 seconds.
+Elapsed time is 692.578701 seconds.
+Elapsed time is 24.731250 seconds.
+Elapsed time is 763.305159 seconds.
+Elapsed time is 679.042220 seconds.
+Elapsed time is 20.976558 seconds.
+Elapsed time is 776.002089 seconds.
+Elapsed time is 677.957747 seconds.
+Elapsed time is 17.777009 seconds.
+Elapsed time is 715.230915 seconds.
+Elapsed time is 662.328137 seconds.
+Elapsed time is 16.646883 seconds.
+Elapsed time is 668.710967 seconds.
+Elapsed time is 616.646850 seconds.
+Elapsed time is 17.492554 seconds.
+Elapsed time is 695.909433 seconds.
+Elapsed time is 627.024411 seconds.
+Elapsed time is 19.965921 seconds.
+Elapsed time is 730.574157 seconds.
+Elapsed time is 630.385680 seconds.
+Elapsed time is 22.395345 seconds.
+Elapsed time is 673.610764 seconds.
+Elapsed time is 598.173987 seconds.
+Elapsed time is 17.796779 seconds.
+Elapsed time is 722.477837 seconds.
+Elapsed time is 644.409772 seconds.
+Elapsed time is 22.483612 seconds.
+Elapsed time is 771.146044 seconds.
+Elapsed time is 638.125932 seconds.
+Elapsed time is 27.128770 seconds.
+Elapsed time is 773.847199 seconds.
+Elapsed time is 683.917230 seconds.
+Elapsed time is 48.076543 seconds.
+Elapsed time is 824.006288 seconds.
+Elapsed time is 742.475779 seconds.
+Elapsed time is 56.303017 seconds.
+Elapsed time is 891.628136 seconds.
+Elapsed time is 710.444520 seconds.
+Elapsed time is 68.884525 seconds.
+Elapsed time is 790.058650 seconds.
+Elapsed time is 691.181544 seconds.
+Elapsed time is 44.032591 seconds.
+Elapsed time is 756.351765 seconds.
+Elapsed time is 646.585300 seconds.
+Elapsed time is 45.714741 seconds.
+Elapsed time is 747.363227 seconds.
+Elapsed time is 649.247547 seconds.
+Elapsed time is 39.810207 seconds.
+Elapsed time is 718.553921 seconds.
+Elapsed time is 618.563076 seconds.
+Elapsed time is 32.419951 seconds.
+Elapsed time is 743.074371 seconds.
+Elapsed time is 614.533832 seconds.
+Elapsed time is 32.411696 seconds.
+Elapsed time is 720.207748 seconds.
+Elapsed time is 625.591335 seconds.
+Elapsed time is 37.185429 seconds.
+Elapsed time is 619.952237 seconds.
+Elapsed time is 557.371766 seconds.
+Elapsed time is 23.733029 seconds.
+Elapsed time is 597.609236 seconds.
+Elapsed time is 551.526351 seconds.
+Elapsed time is 24.419511 seconds.
+Elapsed time is 635.846382 seconds.
+Elapsed time is 560.976418 seconds.
+Elapsed time is 35.752822 seconds.
+Elapsed time is 591.283425 seconds.
+Elapsed time is 523.775989 seconds.
+Elapsed time is 17.990689 seconds.
+Elapsed time is 554.477797 seconds.
+Elapsed time is 461.759714 seconds.
+Elapsed time is 18.409985 seconds.
+Elapsed time is 551.791163 seconds.
+Elapsed time is 477.385598 seconds.
+Elapsed time is 18.020775 seconds.
+Elapsed time is 535.652845 seconds.
+Elapsed time is 440.106911 seconds.
+Elapsed time is 13.074387 seconds.
+Elapsed time is 510.409386 seconds.
+Elapsed time is 431.995988 seconds.
+Elapsed time is 14.949813 seconds.
+Elapsed time is 505.251571 seconds.
+Elapsed time is 421.429755 seconds.
+Elapsed time is 13.045019 seconds.
+Elapsed time is 411.020930 seconds.
+Elapsed time is 371.044022 seconds.
+Elapsed time is 8.408773 seconds.
+Elapsed time is 379.366855 seconds.
+Elapsed time is 360.809691 seconds.
+Elapsed time is 11.578934 seconds.
+Elapsed time is 351.124770 seconds.
+Elapsed time is 330.060873 seconds.
+Elapsed time is 9.841563 seconds.
+Elapsed time is 320.215192 seconds.
+Elapsed time is 304.947815 seconds.
+Elapsed time is 5.473506 seconds.
+Elapsed time is 262.478070 seconds.
+Elapsed time is 249.549145 seconds.
+Elapsed time is 5.991695 seconds.
+Elapsed time is 253.560179 seconds.
+Elapsed time is 234.798199 seconds.
+Elapsed time is 4.664973 seconds.
+Elapsed time is 229.630028 seconds.
+Elapsed time is 225.057983 seconds.
+Elapsed time is 4.497727 seconds.
+Elapsed time is 196.651314 seconds.
+Elapsed time is 195.576382 seconds.
+Elapsed time is 4.238474 seconds.
+Elapsed time is 195.083304 seconds.
+Elapsed time is 189.905022 seconds.
+Elapsed time is 4.617555 seconds.
