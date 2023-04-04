@@ -3,26 +3,29 @@ clc;
 close all;
 
 % Seed for the random number generator
-seed = 5566;
+% seed = 382;
+seed = randi(10000);
+% seed = 4314;
+seed = 978;
 rng(seed);
 
 % Choice of hyperparameters
-% N = 1000;
+% N = 1000;  
 N = 100;
 K = 100;
-f = 3;
+f = 1;
 k1 = 3;
 k2 = 8;
 alpha_t = 1;
 alpha_s = 1;
-lambda_coeff = 1.5;
+lambda_coeff = 1;
 lambda_t_denom = 5000;
 lambda_s_denom = 50;
 lambda = 1 / (lambda_coeff * lambda_t_denom^alpha_t * lambda_s_denom^alpha_s);
 %lambda = 1/(1.5 * 5000^alpha_t * 50^alpha_s);
 %lambda = 1/(50 * 5000^alpha_t * 50^alpha_s * 16384.5^alpha_v);
 numOffDiagonal = 3;
-outp = 1/5000;
+outp = 0; %1/5000;
 
 % Variables
 CT = cell(K, 1);
@@ -146,9 +149,14 @@ fprintf('maxind: %d \n', maxind);
 leftind = max(1, maxind - 24);
 fprintf('leftind: %d \n', leftind);
 
-subtotalpos = totalpos(leftind:maxind+25);
-fprintf('%d, %d\n',mean(subtotalpos),std(subtotalpos));
+% subtotalpos = totalpos(leftind:maxind+25);
+% fprintf('%d, %d\n',mean(subtotalpos),std(subtotalpos));
 
-plot(totalpos)
-fname = sprintf( '../Data/ct_data_binary_lambda_factor_1.5_%d_%d_%d_%d.mat', N, numOffDiagonal, K, seed);
+fprintf("Seed: %d, Max positives: %d\n", seed, max(totalpos));
+
+plot(totalpos);
+
+fname = sprintf( '../Data/ct_data_binary_lambda_factor_%d_%d_%d_%d_%d.mat', ...
+    lambda_coeff, numOffDiagonal, N, K, seed);
+fprintf("%s\n", fname);
 save(fname);

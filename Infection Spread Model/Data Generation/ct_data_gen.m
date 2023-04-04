@@ -3,11 +3,13 @@ clc;
 close all;
 
 % Seed for the random number generator
-rng(7);
+seed = 5566;
+rng(seed);
 
 % Choice of hyperparameters
-N = 1000;
-K = 500;
+% N = 1000;
+N = 100;
+K = 100;
 f = 3;
 k1 = 3;
 k2 = 8;
@@ -15,16 +17,20 @@ alpha_t = 1;
 alpha_s = 1;
 alpha_v = 1;
 lambda = 1/(1.5 * 5000^alpha_t * 50^alpha_s * 16384.5^alpha_v);
-numOffDiagonal = 50;
+%lambda = 1/(50 * 5000^alpha_t * 50^alpha_s * 16384.5^alpha_v);
+numOffDiagonal = 3;
 outp = 1/5000;
 
 % Variables
-CT = cell(K,1);
-X = cell(K,1);
+CT = cell(K, 1);
+X = cell(K, 1);
+Ls = cell(K, 1);
 
 % Clique size distribution
 probabilities = [0.04 0.12 0.12 0.21 0.21 0.3/7.0 0.3/7.0 0.3/7.0 0.3/7.0 0.3/7.0 0.3/7.0 0.3/7.0];
 numPeople = [1 2 3 4 5 6 7 8 9 10 11 12];
+%probabilities = [1.0];
+%numPeople = [20];
 
 % Grouping individuals into cliques
 ngroups = 0;
@@ -32,6 +38,7 @@ prgroups = [];
 count = 0;
 for i=1:N
     count1 = randsample(numPeople, 1, true, probabilities);
+    %count1 = 20;
     ngroups = ngroups + 1;
     if count + count1 >= N
         prgroups = [prgroups [count + 1 N]'];
@@ -80,12 +87,19 @@ for k=1:K
     T = zeros(N,N);
     S = zeros(N,N);
     L = zeros(N,N);
-    for i=1:N
-       for j=1:N
+    %for i=1:N
+       %for j=1:N
+     for i=1:(N-1)
+       for j=(i+1):N
            if (A(i,j) == 1)
                T(i,j) = 1 + 9999*rand;
                S(i,j) = 1 + 99*rand;
-               L(i,j) = T(i,j)^alpha_t * S(i,j)^alpha_s * max(ViralLoads(i),ViralLoads(j))^alpha_v;
+               L(i,j) = (T(i,j)^alpha_t * S(i,j)^alpha_s ...
+                   * max(ViralLoads(i),ViralLoads(j))^alpha_v);
+               % Make the T, S and L matrices symmetric
+               T(j, i) = T(i, j);
+               S(j, i) = S(i, j);
+               L(j, i) = L(i, j);
            end
        end
     end
@@ -122,10 +136,17 @@ for k=1:K
     
     X{k} = ViralLoads;
     CT{k} = sparse(A);
+    Ls{k} = sparse(L);
 end
 
 [~,maxind] = max(totalpos);
-subtotalpos = totalpos(maxind-24:maxind+25);
+fprintf('maxind: %d \n', maxind);
+leftind = max(1, maxind - 24);
+fprintf('leftind: %d \n', leftind);
+
+subtotalpos = totalpos(leftind:maxind+25);
 fprintf('%d, %d\n',mean(subtotalpos),std(subtotalpos));
 
-save('../Data/ct_data.mat');
+plot(totalpos)
+fname = sprintf( '../Data/ct_data_ppm_lambda_factor_4_%d_%d_%d_%d.mat', N, numOffDiagonal, K, seed);
+%save(fname);
