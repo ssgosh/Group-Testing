@@ -8,12 +8,12 @@ function fname = ct_data_gen_binary_fn(num)
     N = 100;
     K = 100;
     f = 1;
-    k1 = 3;
-    k2 = 8;
+    k1 = 1;
+    k2 = 14;
     k3 = 14;
     alpha_t = 1;
     alpha_s = 1;
-    lambda_coeff = 1;
+    lambda_coeff = 4;
     lambda_t_denom = 5000;
     lambda_s_denom = 50;
     lambda = 1 / (lambda_coeff * lambda_t_denom^alpha_t * lambda_s_denom^alpha_s);
@@ -156,15 +156,15 @@ function fname = ct_data_gen_binary_fn(num)
     
     fprintf("Seed: %d, Max positives: %d\n", seed, max(totalpos));
     
-    plot(totalpos);
+%     plot(totalpos);
     
-    fname = sprintf(['../Data/SIER/%03d_ct_data_binary_family_structured_'...
+    fname = sprintf(['../Data/SIR/%d/%03d_ct_data_binary_family_structured_'...
         'N_%d_K_%d_'...
         'lambda_factor_%d_'...
         'numOffDiagonal_%d_' ...
         'f_%d_k1_%d_k2_%d_outp_%f_' ...
         'seed_%d.mat'], ...
-        num,  N, K, lambda_coeff, numOffDiagonal, f, k1, k2, outp, seed);
+        N, num,  N, K, lambda_coeff, numOffDiagonal, f, k1, k2, outp, seed);
     fprintf("%s\n", fname);
-     save(fname);
+    save(fname);
 end
